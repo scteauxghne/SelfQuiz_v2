@@ -85,8 +85,29 @@ public class Session
                 termHints.add(currentTerm.getDateHints().get(i));
             }
         }
+        if (actionHints == true)
+        {
+            for (int i = o; i < currentTerm.getActionHints().size(); i++)
+            {
+                termHints.add(currentTerm.getActionHints().get(i));
+            }
+        }
+        if (associationHints == true)
+        {
+            for (int i = o; i < currentTerm.getAssociationHints().size(); i++)
+            {
+                termHints.add(currentTerm.getAssociationHints().get(i));
+            }
+        }
  
-    public String getHint
+    public void newHint()
+    {
+        hintsUsed++;
+        String hint = termHints.get(Math.random() * termHints.size());
+        usedTermHints.add(hint);
+        termHints.remove(termHints.indexOf(hint));
+    }
+    public ArrayList<String> getUsedHints() { return usedTermHints; }
     public void useTerm(Term t)
     {
         remainingTerms.remove(t);
