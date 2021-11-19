@@ -25,6 +25,7 @@ public class Session
     private ArrayList<String> usedTermHints;
     private int hintsUsed;
     private float points;
+    private boolean sessionStart;
     
     Session(ArrayList<Deck> decks, boolean generalHints, boolean dateHints, boolean actionHints, boolean associationHints)
     {
@@ -41,6 +42,7 @@ public class Session
             }
         }
         startingTerms = remainingTerms.size();
+        sessionStart = true;
     }
     Session(ArrayList<Deck> decks, ArrayList<Term> terms, boolean generalHints, boolean dateHints, boolean actionHints, boolean associationHints))
     {
@@ -61,7 +63,11 @@ public class Session
             remainingTerms.add(t);
         }
         startingTerms = remainingTerms.size();
+        sessionStart = true;
     }
+    
+    public boolean getSessionStart() { return sessionStart; }
+    public void sessionStart() { sessionStart = false; }
     
     public int getStartingTerms() { return startingTerms; }
     public ArrayList<Term> getRemainingTerms() { return remainingTerms; }
