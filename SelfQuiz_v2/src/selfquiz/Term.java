@@ -16,9 +16,10 @@ public class Term
     private String term;
     private String type;
     
-    private ArrayList<String> basicHints;
-    private ArrayList<String> intermediateHints;
-    private ArrayList<String> advancedHints;
+    private ArrayList<String> generalHints;
+    private ArrayList<String> dateHints;
+    private ArrayList<String> actionHints;
+    private ArrayList<String> associationHints;
     
     private ArrayList<String> keyPhrases;
     private ArrayList<String> promptPhrases;
@@ -27,14 +28,15 @@ public class Term
     private boolean keyPhrasesExclusionary;
     
     
-    Term(String term, String type, ArrayList<String> basicHints, ArrayList<String> intermediateHints, ArrayList<String> advancedHints, ArrayList<String> keyPhrases, ArrayList<String> promptPhrases, ArrayList<String> wrongPhrases, boolean keyPhrasesExclusionary)
+    Term(String term, String type, ArrayList<String> generalHints, ArrayList<String> dateHints, ArrayList<String> actionHints, ArrayList<String> associationHints, ArrayList<String> keyPhrases, ArrayList<String> promptPhrases, ArrayList<String> wrongPhrases, boolean keyPhrasesExclusionary)
     {
         this.term = term;
         this.type = type;
         
-        this.basicHints = basicHints;
-        this.intermediateHints = intermediateHints;
-        this.advancedHints = advancedHints;
+        this.generalHints = generalHints;
+        this.dateHints = dateHintsEnabled;
+        this.actionHints = actionHints;
+        this.associationHints = associationHints;
         
         this.keyPhrases = keyPhrases;
         this.promptPhrases = promptPhrases;
@@ -47,9 +49,10 @@ public class Term
     public String getTerm() { return term; }
     public String getType() { return type; }
     
-    public ArrayList<String> getBasicHints() { return basicHints; }
-    public ArrayList<String> getIntermediateHints() { return intermediateHints; }
-    public ArrayList<String> getAdvancedHints() { return advancedHints; }
+    public ArrayList<String> getGeneralHints() { return generalHints; }
+    public ArrayList<String> getDateHints() { return dateHints; }
+    public ArrayList<String> getActionHints() { return actionHints; }
+    public ArrayList<String> getAssociationHints() { return associationHints; }
     
     public ArrayList<String> getKeyPhrases() { return keyPhrases; }
     public ArrayList<String> getPromptPhrases() { return promptPhrases; }
