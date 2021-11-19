@@ -133,11 +133,18 @@ public class Menus
         System.out.println( "(" + (s.getStartingTerms() - (s.getStartingTerms() - s.getRemainingTerms().size())) + "/" + s.getStartingTerms() + ")" );
         System.out.println();
         System.out.println("Question " + (s.getStartingTerms() - (s.getStartingTerms() - s.getRemainingTerms().size())) + ": (" + s.getCurrentTerm().getType() + ")" );
+        System.out.println(s.getCurrentTerm().getType().toUpperCase());
+        for (int i = 0; i < s.getUsedHints().size(); i++)
+        {
+            System.out.println(s.getUsedHints().get(i));
+        }
     }
     public int activeGameMenuCommand(Session s, String input)
     {
-        //if (input == "1") { return 0; }
-        //else { return -1; }
+        if (input.toLowerCase().equals("hint") || input.toLowerCase().equals("h") || input.toLowerCase().equals(" "))
+        {
+            s.
+        }
         return 0;
     }
 }
